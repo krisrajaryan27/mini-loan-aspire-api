@@ -1,0 +1,75 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Mini Loan API",
+    "dateExported": "2023-09-03T18:14:41.881Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5888b6c1-c17e-49da-b5cc-695aa682d9d2",
+            "colId": "bbbd0c2d-f3d7-49b9-93e0-abe2ebcfca8f",
+            "containerId": "",
+            "name": "Create Loan",
+            "url": "http://localhost:3000/api/loans",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-03T18:10:45.318Z",
+            "modified": "2023-09-03T18:10:45.318Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": 200,\n  \"term\": 3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c876e3c9-aeae-48ce-98c7-e3575408245b",
+            "colId": "bbbd0c2d-f3d7-49b9-93e0-abe2ebcfca8f",
+            "containerId": "",
+            "name": "Approve Loan",
+            "url": "http://localhost:3000/api/loans/e2fdf36f-a894-417f-bad2-ab2c11aad6ab/approve",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-09-03T18:12:18.012Z",
+            "modified": "2023-09-03T18:12:18.012Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dbed8f7d-248d-447c-a6a2-e4c07c4d9a90",
+            "colId": "bbbd0c2d-f3d7-49b9-93e0-abe2ebcfca8f",
+            "containerId": "",
+            "name": "View Loan by User Id",
+            "url": "http://localhost:3000/api/loans/user/042c74c3-af89-4253-9c7f-e349e1d68ce1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-09-03T18:13:06.995Z",
+            "modified": "2023-09-03T18:13:06.995Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4e80937c-59d7-41e5-ac21-48ab345583c7",
+            "colId": "bbbd0c2d-f3d7-49b9-93e0-abe2ebcfca8f",
+            "containerId": "",
+            "name": "Repay Loan",
+            "url": "http://localhost:3000/api/loans/e2fdf36f-a894-417f-bad2-ab2c11aad6ab/repay",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-09-03T18:13:42.317Z",
+            "modified": "2023-09-03T18:13:42.317Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": 350\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
