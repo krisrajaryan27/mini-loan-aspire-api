@@ -14,5 +14,7 @@ Installation:
 
 Service is up and running now.
 
+Now open postman or thunder client and import the thunder-collection_Mini Loan API.json and run all the API endpoints to get the results.
+
 
 
