@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  BadRequestException,
+} from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Loan } from './loan.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -14,10 +18,10 @@ export class LoanService {
   ) {}
 
   async createLoan(loanDto: CreateLoanDto): Promise<Loan> {
-    if (!loanDto) {
-      throw new NotFoundException('Loan data is missing');
+    if (!loanDto || loanDto.amount <= 0 || loanDto.term <= 0) {
+      throw new BadRequestException('Invalid loan data');
     }
-    console.log(loanDto);
+
     const loan = new Loan();
     loan.id = uuid();
     loan.owner = uuid();
@@ -76,6 +80,10 @@ export class LoanService {
     loanId: string,
     repaymentDto: AddRepaymentDto,
   ): Promise<Loan> {
+    if (!loanId || !repaymentDto || repaymentDto.amount <= 0) {
+      throw new BadRequestException('Invalid repayment data');
+    }
+
     const loan = await this.loanRepository.findOne({ where: { id: loanId } });
 
     if (!loan) {
